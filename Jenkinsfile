@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'pip3 install -r requirements.txt'
                 sh 'python3 manage.py migrate'
-#                sh 'python3 manage.py collectstatic --noinput'
+                // sh 'python3 manage.py collectstatic --noinput'
             }
         }
         stage('Deploy') {
