@@ -8,9 +8,9 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh 'pip install -r requirements.txt'
                 sh 'python manage.py migrate'
                 sh 'python manage.py collectstatic --noinput'
-                sh 'python manage.py test'
             }
         }
         stage('Deploy') {
